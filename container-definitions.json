@@ -1,0 +1,31 @@
+
+[
+  {
+    "name": "drupal",
+    "image": "drupal:10-apache",
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "secrets": [
+      {
+        "name": "DB_HOST",
+        "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:785028034935:secret:prod/drupal/db-config-v8"
+      },
+      {
+        "name": "DB_NAME",
+        "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:785028034935:secret:prod/drupal/db-config-v8"
+      },
+      {
+        "name": "DB_USER",
+        "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:785028034935:secret:prod/drupal/db-config-v8"
+      },
+      {
+        "name": "DB_PASSWORD",
+        "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:785028034935:secret:prod/drupal/db-config-v8"
+      }
+    ]
+  }
+]
